@@ -1,6 +1,8 @@
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 require("./configs/database");
+var multer  = require('multer');
+require("dotenv").config();
 
 const cors = require("cors");
 const express = require("express");
@@ -23,6 +25,8 @@ app.use(
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const publicPath = path.resolve(__dirname, "public");
+app.use(express.static(publicPath));
 
 // Enable authentication using session
 app.use(
@@ -36,7 +40,7 @@ app.use(
 
 app.use("/api", require("./routes/auth"));
 app.use("/api/countries", require("./routes/countries"));
-
+app.use("/api/street-arts", require("./routes/street-arts")); 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use("/api/*", (req, res, next) => {
   let err = new Error("Not Found");
