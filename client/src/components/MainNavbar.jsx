@@ -12,13 +12,14 @@ function MainNavbar(props) {
   return (
     <nav className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">MERN Boilerplate</h1>
+      <h1 className="App-title">MERN Street Art</h1>
       <NavLink to="/" exact>
         Home
       </NavLink>
-      <NavLink to="/countries">Countries</NavLink>
-      <NavLink to="/add-country">Add country</NavLink>
-      <NavLink to="/signup">Signup</NavLink>
+      <NavLink to="/list">List</NavLink>
+      <NavLink to="/map">Map</NavLink>
+      <NavLink to="/new-street-art">New Street Art</NavLink>
+      <NavLink to="/signup">SignUp</NavLink>
       <NavLink to="/login">Login</NavLink>
 
       <Link to="/" onClick={handleLogoutClick}>

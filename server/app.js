@@ -41,6 +41,8 @@ app.use(
 app.use("/api", require("./routes/auth"));
 app.use("/api/countries", require("./routes/countries"));
 app.use("/api/street-arts", require("./routes/street-arts")); 
+app.use("/api", require("./routes/visits"));
+
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use("/api/*", (req, res, next) => {
   let err = new Error("Not Found");

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema(
   {
-    picture: String,
+    pictureUrl: String,
     location: {
       type: { type: String, enum: ["Point"], default: "Point" },
       coordinates: [Number],

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+require("dotenv").config();
 console.log(process.env.NODE_ENV);
 console.log(process.env.REACT_APP_BACKEND_URL);
 
@@ -56,6 +56,13 @@ export default {
       .get("/countries")
       .then((res) => res.data)
       .catch(errHandler);
+  },
+
+  getStreetArts() {
+    return service
+      .get('/street-arts')
+      .then(res => res.data)
+      .catch(errHandler)
   },
 
   addCountry(body) {

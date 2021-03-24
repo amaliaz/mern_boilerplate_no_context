@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import MainNavbar from "./MainNavbar";
 import Home from "./pages/Home";
-import Countries from "./pages/Countries";
+import List from "./pages/List";
 import AddCountry from "./pages/AddCountry";
 import Secret from "./pages/Secret";
 import Login from "./pages/Login";
@@ -21,7 +21,7 @@ class App extends React.Component {
         <MainNavbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/countries" component={Countries} />
+          <Route exact path="/list" component={List} />
           <Route exact path="/add-country" component={AddCountry} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
